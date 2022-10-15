@@ -1,0 +1,13 @@
+<div class="nav-bar">
+  <a
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  >
+  <a routerLink="/user" routerLinkActive="active">User</a>
+  <a routerLink="/admin" routerLinkActive="active">Admin</a>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

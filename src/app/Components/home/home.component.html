@@ -1,0 +1,32 @@
+<div class="inputContainer">
+  <div class="insec1">
+    <label>Product Name</label>
+    <input type="text" name="Name" required [(ngModel)]="productName" />
+    <label>Price</label>
+    <input type="text" required [(ngModel)]="productPrice" />
+    <label>Quantity</label>
+    <input type="number" required [(ngModel)]="productQuantity" />
+    <label>Date On</label>
+    <input type="text" required [(ngModel)]="productDate" />
+  </div>
+  <div class="insec2">
+    <label>Type</label>
+    <input type="text" required [(ngModel)]="productType" />
+    <label>Avilablity</label>
+    <select name="choice" [(ngModel)]="productAvailability">
+      <option value="yes" selected>Yes</option>
+      <option value="no">No</option>
+    </select>
+    <label>Description</label>
+    <textarea
+      name="descripiton"
+      rows="5"
+      cols="30"
+      [(ngModel)]="productDesc"
+    ></textarea>
+    <button (click)="addProductsDetails()">Add Product +</button>
+  </div>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

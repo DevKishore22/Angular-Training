@@ -1,0 +1,47 @@
+<div class="userPage">
+  <input
+    class="search-bar"
+    type="text"
+    placeholder="Search a product"
+    appTrimNumbers
+    [(ngModel)]="searchInput"
+    (input)="getSearch()"
+  />
+  <div class="user-table">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Shop</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of availableProductList">
+          <td>{{ item.id }}</td>
+          <td
+            [ngStyle]="{
+              background: searchInput == item.name ? 'blue' : 'white'
+            }"
+          >
+            {{ item.name }}
+          </td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.date | longDate }}</td>
+          <td>{{ item.descripiton | shortOut: 40 }}</td>
+          <td>
+            <button
+              (click)="userWantToBuy(item.id)"
+              [disabled]="item.quantity <= 0 ? true : false"
+            >
+              Buy
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
