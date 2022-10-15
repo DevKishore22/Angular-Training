@@ -1,0 +1,24 @@
+<div class="admin-table">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Count</th>
+        <th>date</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of adminProductList">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.date | longDate }}</td>
+        <td>{{ item.descripiton | shortOut: 40 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

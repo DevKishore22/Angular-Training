@@ -1,0 +1,30 @@
+<div class="display-container">
+  <div class="searcharea">
+    <input
+      class="search-bar"
+      type="text"
+      placeholder="Search a product"
+      [(ngModel)]="searchInput"
+      (input)="getSearch()"
+    />
+    <input
+      class="search-bar"
+      type="text"
+      placeholder="Search a product"
+      appTrimNumbers
+      [(ngModel)]="searchUserInput"
+    />
+  </div>
+  <div class="product-tables">
+    <app-admin
+      [adminProductList]="productArray"
+      [productID]="purchaseID"
+      [searchedList]="resultantSearch"
+    ></app-admin>
+    <app-user
+      [userProductList]="productArray"
+      (purchaseID)="getPurchaseID($event)"
+      [serachInput]="searchUserInput"
+    ></app-user>
+  </div>
+</div>
